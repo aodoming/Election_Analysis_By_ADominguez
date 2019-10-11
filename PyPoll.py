@@ -1,72 +1,71 @@
-#The data we need to retrieve. 
-candidates_list = 'Charles C. Stockham", "Diane DeGette", "Raymond A. Doane'
-print(candidates_list)
-
-# A complete list of candidates who received votes. Using the Comparison Operators (<,>, <=,<=, == etc) 
-
-
-candidates_list = ["Charles C. Stockham", "Diane DeGette", "Raymond A. Doane"]
-if candidates_list[1] == 'Diane DeGette':
-    print(candidates_list[1], ("is in the list of candidates"))  
-if candidates_list[2] == 'Raymond A. Doane':
-    print(candidates_list[2], ("is in the list of candidates")) 
-if candidates_list[0] != 'Raymond A. Doane':
-    print(candidates_list[0], ("is in the list of candidates"))
-
-
-#The total number of votes cast.
-
-
-
-#Total number of votes each candidate won.
-#The % of votes each candidate won.
-#The winner of the election based on popular vote.
-
-#Read Data From File
+###################                 READ  & WRITE FROM DATA    #########
+# Read Data From File/using Direct path
 #Assign a variable for the file to load and the path.
-#file_to_load = 'Resources\election_results.csv'
+# file_to_load = 'Election_Analysis_by_ADominguez\Resources\election_results.csv'
 
-#open the election results and read the file.
-#election_data = open(file_to_load, 'r')
+# #open the election results and read the file.
+# with open(file_to_load) as election_data:
 
-#To do: perform analysis.
+# # To do: perform analysis.
+#   print(election_data)
 
+#Read Data from File/using Indirect Path
+#Add our dependencies
+import csv
+import os
+# Assign a variable for the file to load and the path.
+file_to_load = os.path.join("Resources", "election_results.csv")
+# Open the election results and read the file.
+with open(file_to_load) as election_data:
 
-#close the file.
-#election_data.close
+    # Print the file object.
+     print(election_data)
 
+##############################################################################
+# # Write Files to Python- this code uses the open() & close() functions
+# # Create a filename variable to a direct or indirect path to the file.
+# file_to_save = os.path.join("analysis", "election_analysis.txt")
 
-#Read file modified with the with() function
-#open the election results and read the file.
-#with open(file_to_load) as election_data:
+# # Using the with statement open the file as a text file.
+# outfile = open(file_to_save, "w")
+# # Write some data to the file.
+# outfile.write("Hello World")
 
-    #To do: Perform analysis
-   # print(election_data)
+# # Close the file
+# outfile.close()
 
-#################  Open & Read Files ########
+# Write Files to Python- below code uses the with statement instead of open() & close() functions
+# Create a filename variable to a direct or indirect path to the file.
+file_to_save = os.path.join("analysis", "election_analysis.txt")
 
+# Using the with statement open the file as a text file.
+with open(file_to_save, "w") as txt_file:
+
+       # Write three counties to the file. 
+       # Add the "newline escape sequence" \n
+          # Write three counties to the file.
+     txt_file.write("Counties in the Election\n----------------\n")
+     txt_file.write("Arapahoe\nDenver\nJefferson")
+
+##################################################################################
+#Reading the election results from file.
 #Add our dependencies.
 import csv
 import os
-#Assign a variable for the file to load and the path.
-file_to_load = 'Resources\election_results.csv'
+# Assign a variable to load a file from a path.
+file_to_load = os.path.join("Resources", "election_results.csv")
+# Assign a variable to save the file to a path.
+file_to_save = os.path.join("Analysis",  "election_analysis.txt")
 
-#open the election results and read the file.
+# Open the election results and read the file.
 with open(file_to_load) as election_data:
 
-     #To do: Perform analysis
-         print(election_data)
+#To do: read and analyze the data here.
+#Read the file object with the reader function.
+    file_reader = csv.reader(election_data)
 
-
-
-#################  Write to Files ########
-
-# Create a filename variable to a direct or indirect path to the file.
-    #file_to_save = os.path.join("analysis", "election_analysis.txt")
-# Using the open() function with the "w" mode we will write data to the file.
-   #open(file_to_save, "w")
-
-
-
-
+#Print each row in the CSV file. iterarte through the file_reader variable and print each row.
+    headers = next(file_reader)
+    print(headers)
+      
 
