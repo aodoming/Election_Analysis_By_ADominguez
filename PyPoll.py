@@ -1,16 +1,17 @@
 ###################                 READ  & WRITE FROM DATA    #########
-# Read Data From File/using Direct path
+# Read Data From File/using Direct path.
 #Assign a variable for the file to load and the path.
-# file_to_load = 'Election_Analysis_by_ADominguez\Resources\election_results.csv'
+file_to_load = 'Resources\election_results.csv'
 
-# #open the election results and read the file.
-# with open(file_to_load) as election_data:
+# open the election results and read the file.
+with open(file_to_load) as election_data:
 
-# # To do: perform analysis.
-#   print(election_data)
+# To do: perform analysis.
+   print(election_data)
 
-#Read Data from File/using Indirect Path
-#Add our dependencies
+
+#Read Data from File(2)/using Indirect Path.
+#Add our dependencies.
 import csv
 import os
 # Assign a variable for the file to load and the path.
@@ -22,19 +23,19 @@ with open(file_to_load) as election_data:
      print(election_data)
 
 ##############################################################################
-# # Write Files to Python- this code uses the open() & close() functions
-# # Create a filename variable to a direct or indirect path to the file.
-# file_to_save = os.path.join("analysis", "election_analysis.txt")
+# Write Files to Python- this code uses the open() & close() functions.
+# Create a filename variable to a direct or indirect path to the file.
+file_to_save = os.path.join("analysis", "election_analysis.txt")
 
-# # Using the with statement open the file as a text file.
-# outfile = open(file_to_save, "w")
-# # Write some data to the file.
-# outfile.write("Hello World")
+# Using the with statement open the file as a text file.
+outfile = open(file_to_save, "w")
+# Write some data to the file.
+outfile.write("Hello World")
 
-# # Close the file
-# outfile.close()
+# Close the file.
+outfile.close()
 
-# Write Files to Python- below code uses the with statement instead of open() & close() functions
+# Write Files to Python(2)- below code uses the with statement instead of open() & close() functions.
 # Create a filename variable to a direct or indirect path to the file.
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 
