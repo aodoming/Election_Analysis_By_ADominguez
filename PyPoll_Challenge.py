@@ -49,7 +49,6 @@ with open(file_to_load) as election_data:
 
         # If the candidate does not match any existing candidate... If statement to get unique names
         if county_name not in county_options:
-            # Add it to the list of candidates.
             county_options.append(county_name)
             # 2. Begin tracking each candidate's vote count. To create each candidate as a keyfor the dictionary.
             county_votes[county_name] = 0
@@ -68,6 +67,14 @@ with open(file_to_save, "w") as txt_file:
     # Save the final vote count to the text file.
     txt_file.write(election_results) 
 
+    county_election_results = (
+        f"\nCounty Votes:\n"
+        #  f"{county}: {vote_percentage:.1f}% ({votes:,})\n"
+        f"Largest County Turnout: {winning_county}\n")
+        #f"-------------------------\n")
+    print(county_election_results, end="")
+    txt_file.write(county_election_results)
+
     # 1. Iterate through the county list. Determine % of votes per county.
     for county in county_votes:
         # 2. Retrieve vote count of a candidate.
@@ -76,26 +83,17 @@ with open(file_to_save, "w") as txt_file:
         vote_percentage = float(votes) / float(total_votes) * 100
         # 4. Print the candidate name and percentage of votes.
         # print each candidate's name, vote count, and percentage of votes to terminal
-        #county_results = (f"{county}: {vote_percentage:.1f}% ({votes:,})\n")
-        #print(county_results)
+        county_election_results = (f"{county}: {vote_percentage:.1f}% ({votes:,})\n")
+        print(county_election_results)
         #  Save the candidate results to our text file.
-        #txt_file.write(county_results)
-
-        county_election_results = (
-            f"\nCounty Votes:\n"
-            f"{county}: {vote_percentage:.1f}% ({votes:,})\n"
-            f"Largest County Turnout: {winning_county}\n"
-            f"-------------------------\n")
-        print(county_election_results, end="")
         txt_file.write(county_election_results)
-    
+  
         # Determine winning vote count and candidate. Determine if the votes is greater than the winning count.
         if (votes > winning_county_count) and (vote_percentage > winning_county_percentage):
             # If true then set winning_count = votes and winning_percent = vote_percentage.
             winning_county_count = votes
             winning_county_percentage = vote_percentage
             winning_county = county
-
 
     # 1. Iterate through the candidate list. Determine % of votes per candidate.
     for candidate in candidate_votes:
