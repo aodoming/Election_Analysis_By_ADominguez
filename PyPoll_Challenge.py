@@ -62,18 +62,11 @@ with open(file_to_save, "w") as txt_file:
         f"\nElection Results\n"
         f"-------------------------\n"
         f"Total Votes: {total_votes:,}\n"
-        f"-------------------------\n")
+        f"-------------------------\n"
+        f"\nCounty Votes:\n")
     print(election_results, end="")
     # Save the final vote count to the text file.
     txt_file.write(election_results) 
-
-    county_election_results = (
-        f"\nCounty Votes:\n"
-        #  f"{county}: {vote_percentage:.1f}% ({votes:,})\n"
-        f"Largest County Turnout: {winning_county}\n")
-        #f"-------------------------\n")
-    print(county_election_results, end="")
-    txt_file.write(county_election_results)
 
     # 1. Iterate through the county list. Determine % of votes per county.
     for county in county_votes:
@@ -94,6 +87,13 @@ with open(file_to_save, "w") as txt_file:
             winning_county_count = votes
             winning_county_percentage = vote_percentage
             winning_county = county
+    txt_file.write("\n")
+
+    county_results = (
+        f"Largest County Turnout: {winning_county}\n"
+        f"-------------------------\n")
+    print(county_results, end="")
+    txt_file.write(county_results)
 
     # 1. Iterate through the candidate list. Determine % of votes per candidate.
     for candidate in candidate_votes:
@@ -126,4 +126,3 @@ with open(file_to_save, "w") as txt_file:
     print(winning_candidate_summary)
     # Save the winning candidate's results to the text file.
     txt_file.write(winning_candidate_summary)    
-     
