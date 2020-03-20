@@ -1,5 +1,6 @@
 ## DESCRIPTION
 In this project,we use the programming language Python to: 
+
      * Create scripts that read, write, and store data from files or in arrays.
      * Perform mathematical operations.
      * Use decision statements, logical operations for complex comparisons, and repetition statements to run code more than once.
