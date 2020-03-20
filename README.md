@@ -1,10 +1,10 @@
 ## DESCRIPTION
 In this project,we use the programming language Python to: 
 
-     * Create scripts that read, write, and store data from files or in arrays.
-     * Perform mathematical operations.
-     * Use decision statements, logical operations for complex comparisons, and repetition statements to run code more than once.
-     * Produce screen outputs.
+ * Create scripts that read, write, and store data from files or in arrays.
+ * Perform mathematical operations.
+ * Use decision statements, logical operations for complex comparisons, and repetition statements to run code more than once.
+ * Produce screen outputs.
 
 ### SITUATION/TASK
 A Colorado Board of Election employee has given you the following tasks to complete the election audit of a recent local congressional election.
