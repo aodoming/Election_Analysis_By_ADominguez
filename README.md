@@ -6,7 +6,7 @@ In this project,we use the programming language Python to:
  * Use decision statements, logical operations for complex comparisons, and repetition statements to run code more than once.
  * Produce screen outputs.
 
-
+### SITUATION/TASK
 A Colorado Board of Election employee has given you the following tasks to complete the election audit of a recent local congressional election.
 
 1. Calculate the total number of votes cast.
